@@ -1,12 +1,15 @@
 import React from 'react';
 import './Cart.css';
 
+
 const Cart = (props) => {
     const data = props.cartData;
-    
+    console.log(data)
+
     let totalPrice = 0;
     data.forEach(element => {
-        totalPrice += parseFloat(element.price);
+        totalPrice += parseFloat(element.price) * element.quantity;
+        //debugger
     });
     totalPrice = parseFloat(totalPrice.toFixed(2));
     let shippingCharge = 0; 
@@ -14,7 +17,7 @@ const Cart = (props) => {
         shippingCharge = 0;
     }else if(totalPrice > 15){
         shippingCharge = 5.9;
-    }else{
+    }else if(shippingCharge>0){
         shippingCharge = 9.99;
     }
     let total = parseFloat((totalPrice + shippingCharge).toFixed(2));
@@ -34,7 +37,10 @@ const Cart = (props) => {
             <p>Estimated Tax:	    ${tax}</p>
             </small>
             <h3>Order Total:	    ${grandTotal}</h3>
-            <button className="palce-order">Place order</button>
+
+            {
+                props.children
+            }
         </div>
     );
 };
