@@ -31,7 +31,7 @@ function App() {
 					<Route exact path="/"><Shop /></Route>
 					<Route path="/shop"><Shop /></Route>
 					<Route path="/review"><Review /></Route>
-					<Route path="/inventory"><Inventory /></Route>
+					<PrivateRoute path="/inventory"><Inventory /></PrivateRoute>
 					<Route path="/product/:product_key"><ProductDetails /></Route>
 					<Route path="/place_order"><PlaceOrder /></Route>
 					<PrivateRoute path="/shipment"><Shipment /></PrivateRoute>
