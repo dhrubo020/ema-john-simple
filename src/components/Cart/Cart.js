@@ -4,7 +4,7 @@ import './Cart.css';
 
 const Cart = (props) => {
     const data = props.cartData;
-    console.log(data)
+    //console.log(data)
 
     let totalPrice = 0;
     data.forEach(element => {

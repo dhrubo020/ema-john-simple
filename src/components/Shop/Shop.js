@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Shop = () => {
     const itemList = fakeData.slice(0, 10);
-    console.log(typeof (itemList))
+    //console.log(typeof (itemList))
     const [products, setProducts] = useState(itemList);
     const [cart, setCart] = useState([]);
 
