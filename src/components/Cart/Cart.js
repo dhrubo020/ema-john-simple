@@ -8,7 +8,8 @@ const Cart = (props) => {
 
     let totalPrice = 0;
     data.forEach(element => {
-        totalPrice += parseFloat(element.price) * element.quantity;
+        console.log(element.price , element.quantity)
+        totalPrice += parseFloat(element.price) * (element.quantity || 1);
         //debugger
     });
     totalPrice = parseFloat(totalPrice.toFixed(2));

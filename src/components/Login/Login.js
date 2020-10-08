@@ -97,7 +97,6 @@ function Login() {
         <div className="App">
             <center>
                 <h3>Our own Authentication</h3>
-                <p>{user.email} {user.password}</p>
                 <form onSubmit={handleSubmit}>
                     <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUserCheck" id="" /> <label htmlFor="newUser">New User Sign Up</label> <br /><br />
                     {newUser && <> <input type="text" name="name" onChange={handleBlur} placeholder="Name" required /><br /><br /></>}
@@ -126,10 +125,10 @@ function Login() {
                         :
                         <div>
                             <br /> <br />
-                            <button onClick={googleSignInClicked}>Sign In With Google</button> <br /> <br />
+                            <button onClick={googleSignInClicked}>Sign In With Google </button> <br /> <br />
                             <button onClick={fbSignIn}>Sign In With Facebook</button>
                         </div>
-
+                    
                 }
             </center>
         </div>

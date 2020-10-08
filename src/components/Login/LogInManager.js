@@ -10,6 +10,14 @@ export const initializeFirebaseLogin = () => {
     }
 }
 
+const setUserToken=()=>{
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+    .then(function(idToken) {
+        sessionStorage.setItem('token', idToken)
+      }).catch(function(error) {
+        // Handle error
+      });
+}
 
 export const googleSignIn = () => { //--------------------------------------------------SignIn clicked
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -24,6 +32,7 @@ export const googleSignIn = () => { //------------------------------------------
                 photo: photoURL,
                 success: true
             }
+            setUserToken();
             return userData;
             //console.log(user, displayName, email, photoURL);
         })
